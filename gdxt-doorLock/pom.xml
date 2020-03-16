@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>pig</artifactId>
+		<groupId>com.pig4cloud</groupId>
+		<version>2.6.1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>gdxt-doorLock</artifactId>
+	<description>国电信通门锁问卷调查小程序模块</description>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<!--安全模块-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pig-common-security</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<!--日志处理-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pig-common-log</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<!--接口文档-->
+		<dependency>
+			<groupId>com.pig4cloud</groupId>
+			<artifactId>pig-common-swagger</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<!--注册中心客户端-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+		<!--配置中心客户端-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		</dependency>
+		<!--mybatis-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		<!--数据库-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!--web 模块-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<!--排除tomcat依赖-->
+				<exclusion>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--undertow容器-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+
