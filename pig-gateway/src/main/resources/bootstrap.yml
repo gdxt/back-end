@@ -8,13 +8,12 @@ spring:
     nacos:
       discovery:
         server-addr: ${NACOS-HOST:49.232.32.126}:${NACOS-PORT:32768}
-        namespace: 3b157100-00c4-46db-baa2-1d62eae2f834
+        namespace: 4f00e84f-9cb1-4fbe-9896-5e0194ab9544
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yml
-#        shared-dataids: pig-gateway-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-        shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-        namespace: 3b157100-00c4-46db-baa2-1d62eae2f834
+        shared-dataids: gateway-${spring.profiles.active}
+        namespace: 34f00e84f-9cb1-4fbe-9896-5e0194ab9544
   profiles:
     active: @profiles.active@
 
