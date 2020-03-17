@@ -10,10 +10,10 @@ nacos:
 
 db:
   num: 1
-  user: ${MYSQL-USER:root}
-  password: ${MYSQL-PWD:root}
+  user: root
+  password: 123456
   url:
-    0: jdbc:mysql://${MYSQL-HOST:pig-mysql}:${MYSQL-PORT:3306}/${MYSQL-DB:pig_config}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+    0: jdbc:mysql://49.232.32.126:3306/pig_config?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
 
 spring:
   datasource:
