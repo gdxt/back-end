@@ -62,13 +62,16 @@ public class PigUserDetailsServiceImpl implements UserDetailsService {
 	@Override
 	@SneakyThrows
 	public UserDetails loadUserByUsername(String username) {
+		//查缓存
 		Cache cache = cacheManager.getCache("user_details");
 		if (cache != null && cache.get(username) != null) {
 			return (PigUser) cache.get(username).get();
 		}
-
+		//查库
 		R<UserInfo> result = remoteUserService.info(username, SecurityConstants.FROM_IN);
+		//本业务user和Security user转换
 		UserDetails userDetails = getUserDetails(result);
+		//缓存
 		cache.put(username, userDetails);
 		return userDetails;
 	}

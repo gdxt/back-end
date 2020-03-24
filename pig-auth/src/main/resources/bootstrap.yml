@@ -12,7 +12,7 @@ spring:
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yml
-        shared-dataids: common-${spring.profiles.active}
+        shared-dataids: application-dev.yml,pig-auth-dev.yml
         namespace: 4f00e84f-9cb1-4fbe-9896-5e0194ab9544
   profiles:
     active: @profiles.active@

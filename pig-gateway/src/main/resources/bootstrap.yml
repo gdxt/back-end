@@ -12,8 +12,10 @@ spring:
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yml
-        shared-dataids: gateway-${spring.profiles.active}
-        namespace: 34f00e84f-9cb1-4fbe-9896-5e0194ab9544
+        # shared-dataids: pig-gateway-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        shared-dataids: application-dev.yml,pig-gateway-dev.yml
+        namespace: 4f00e84f-9cb1-4fbe-9896-5e0194ab9544
+
   profiles:
     active: @profiles.active@
 
