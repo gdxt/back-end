@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gdzr.qrcode.dao.GdzrQrcodeDao">
+
+	<select id="manufacturer" resultType="com.gdzr.qrcode.entity.GdzrQrcodeManufacturerDO">
+		select `company_profile`,`official_website` from gdzr_qrcode_manufacturer
+	</select>
+
+	<select id="equipmentArchives" resultType="com.gdzr.qrcode.entity.GdzrQrcodeEquipmentDO">
+		select `equipment_id` as equipmentId,`model`,`serial`,`adress`,`service_hotline` as service_hotline,
+				`is_delete`as isDelete,`gmt_create` as gmtCreate,`gmt_modified` as gmtModified
+		from gdzr_qrcode_equipment
+	</select>
+
+	<select id="proList" resultType="com.gdzr.qrcode.entity.GdzrQrcodeProListDO">
+		select `equipment_id` as equipmentId,`equipment_name`as equipmentName,`file_url`as fileUrl,
+    			`image_url` as imageUrl,`service_hotline`as serviceHotline,`model`,`serial`,`adress`,
+    			`introduction`,`is_delete`as isDelete,`gmt_create` as gmtCreate,
+    			`gmt_modified` as gmtModified
+		from gdzr_qrcode_pro_list
+	</select>
+
+</mapper>
